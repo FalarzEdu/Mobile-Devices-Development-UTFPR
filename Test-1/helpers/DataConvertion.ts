@@ -1,6 +1,6 @@
 export function filterCategory(data: Array<any>): Array<string> {
   let set = new Set(
-    data.map((dataPiece) => dataPiece && dataPiece.destination)
+    data.map((dataPiece) => dataPiece.origin && dataPiece.destination)
   );
 
   const result = Array.from(set);
@@ -33,9 +33,7 @@ export default function filterList(data: Array<Passenger>): Array<Section> {
     passengerCount: 0,
   }));
 
-  console.log(categories);
-  console.log(result);
-
+  // console.log(categories)
   data.forEach((passenger) => {
     categories.forEach((category, index) => {
       if (passenger.origin === category || passenger.destination === category) {
