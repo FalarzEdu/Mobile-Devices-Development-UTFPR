@@ -69,6 +69,7 @@ export default function Login() {
                 heigth={70}
                 width={70}
                 onPress={callLogin}
+                accessibilityLabel="loginButton"
               />
             </View>
           </View>

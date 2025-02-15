@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { useActionSheet } from "@expo/react-native-action-sheet";
 import { Stack, useRouter } from "expo-router";
 import Entypo from "@expo/vector-icons/Entypo";
-import { ThemeContext } from "../../contexts/ThemeContext";
+import { ThemeContext, ThemeProvider } from "../../contexts/ThemeContext";
 
 type HeaderActionSheetProps = {
   title: string;
@@ -18,7 +18,7 @@ export default function HeaderActionSheet({
   const router = useRouter();
   const { showActionSheetWithOptions } = useActionSheet();
 
-  let optionsAux = ["Listing", "About", "Cancel", "Logout"];
+  let optionsAux = ["Listing", "Profile", "About", "Cancel", "Logout"];
   removeMenuItems.forEach((element) => {
     const elementIndex: number = optionsAux.indexOf(element);
     if (elementIndex != -1) {
@@ -67,11 +67,11 @@ export default function HeaderActionSheet({
       color: theme.icon,
     },
     icons: {
-      flex: 1,
-      flexDirection: 'row',
-      gap: 48,
-      justifyContent: 'flex-end',
-      paddingEnd: 32
+      // flex: 1,
+      // flexDirection: 'row',
+      // gap: 16,
+      // padding: 0,
+      // margin: 0
     }
   });
 
@@ -83,15 +83,15 @@ export default function HeaderActionSheet({
         headerStyle: styles.header,
         headerRight: () => (
           <View style={styles.icons}>
-            <Pressable onPress={toggleTheme}>
+            {/* <Pressable onPress={toggleTheme}>
               <Entypo
                 name={theme.mode === "light" ? "moon" : "light-up"}
                 size={36}
                 style={styles.menuIcon}
               />
-            </Pressable>
+            </Pressable> */}
             
-            <Pressable onPress={handleOpen}>
+            <Pressable onPress={handleOpen} accessibilityLabel="menuTray">
               <Entypo name="menu" size={36} style={styles.menuIcon} />
             </Pressable>
           </View>

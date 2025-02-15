@@ -8,8 +8,8 @@ export default function layout() {
     <ActionSheetProvider>
       <View style={{ flex: 1 }}>
         <HeaderActionSheet
-          removeMenuItems={["Listing"]}
-          title="Trips listing"
+          removeMenuItems={["Profile"]}
+          title="Profile"
         />
       </View>
     </ActionSheetProvider>

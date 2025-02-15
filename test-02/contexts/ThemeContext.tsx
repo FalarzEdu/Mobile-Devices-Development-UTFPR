@@ -39,7 +39,7 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useState<Theme>(darkTheme);
+  const [theme, setTheme] = useState<Theme>(lightTheme);
 
   const toggleTheme = () => {
     setTheme((prevTheme) =>

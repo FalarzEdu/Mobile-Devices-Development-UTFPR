@@ -1,0 +1,24 @@
+appId: com.anonymous.Prova01
+---
+# - launchApp
+
+- tapOn: "loginButton"
+- assertVisible: "Trips listing"
+
+- tapOn: "menuTray"
+- tapOn: "Profile"
+
+- assertVisible: "Profile"
+
+- tapOn: "Username"
+- eraseText
+- pressKey: back
+
+- tapOn: "Email"
+- eraseText
+- inputText: "email@teste.com"
+- pressKey: back
+
+- tapOn: "Atualizar"
+
+- assertVisible: "Um ou mais campos vazios!"
