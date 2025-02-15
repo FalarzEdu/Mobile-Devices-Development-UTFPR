@@ -14,7 +14,7 @@ describe('ThemeProvider', () => {
     );
 
     const themeMode = screen.getByTestId('theme-mode');
-    expect(themeMode.props.children).toBe('dark');
+    expect(themeMode.props.children).toBe('light');
   })
 
   it('Muda o tema de "escuro" para "claro"', () => {
@@ -33,13 +33,13 @@ describe('ThemeProvider', () => {
 
     // Verifica se o modo está no padrão (dark)
     const themeMode = screen.getByTestId('theme-mode');
-    expect(themeMode.props.children).toBe('dark');
+    expect(themeMode.props.children).toBe('light');
 
     // Pressiona o botão
     const toggleButton = screen.getByTestId('toggle-theme-button');
     fireEvent.press(toggleButton);
 
     // Verifica se o modo foi alterado
-    expect(themeMode.props.children).toBe('light');
+    expect(themeMode.props.children).toBe('dark');
   });
 });

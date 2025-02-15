@@ -12,6 +12,20 @@ Já os testes E2E simulam cenários reais de uso da aplicação, como login, atu
 
 Os testes foram desenvolvidos e executas em um ambiente emulado e um celular real, mas ambos Android.
 
+## Testes feitos
+
+### Unitários
+
+Os dois testes unitários buscaram testar isoladamente dois componentes.
+
+1. O botão "imageButton"
+2. O botão de trocar o tema da aplicação
+
+Já os testes E2E testaram os seguintes fluxos:
+
+1. Registro de um usuário
+2. Modificação do perfil de um usuário
+
 ## Realizando os testes
 
 ### Dependências
