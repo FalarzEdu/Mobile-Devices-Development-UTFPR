@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { DEFAULT_MARGIN, DEFAULT_PADDING } from '../../constants/GlobalStyles';
 import ValidationInput from '../../components/generics/ValidationInput';
+import { router } from 'expo-router';
 
 export default function index() {
 
@@ -19,6 +20,7 @@ export default function index() {
       alert('Um ou mais campos inválidos!');
     } else {
       alert('Registro feito com sucesso!');
+      router.back();
     }
   }
 
@@ -34,7 +36,7 @@ export default function index() {
       flexDirection: 'row',
       justifyContent: 'center',
       textAlign: 'center',
-      marginTop: DEFAULT_MARGIN * 4
+      marginTop: DEFAULT_MARGIN
     },
     form: {
       flex: 1,
@@ -47,7 +49,8 @@ export default function index() {
       margin: 'auto',
       color: theme.bigText,
       padding: DEFAULT_PADDING * 2,
-      marginBottom: DEFAULT_MARGIN * 8
+      marginBottom: DEFAULT_MARGIN,
+      marginTop: DEFAULT_MARGIN * 2
     }
   })
 
@@ -57,12 +60,14 @@ export default function index() {
       <View style={styles.form}>
         <ValidationInput
           label="Username"
+          accessibilityLabel='Username'
           onChangeText={setusername}
           value={username}
           theme={theme}
         />
         <ValidationInput
           label="Password"
+          accessibilityLabel='Password'
           onChangeText={setPassword}
           value={password}
           secureTextEntry
@@ -70,13 +75,14 @@ export default function index() {
         />
         <ValidationInput
           label="Email"
+          accessibilityLabel='Email'
           onChangeText={setEmail}
           value={email}
           theme={theme}
         />
       </View>
       <Pressable style={styles.submit} onPress={registrar}>
-        Registrar
+        <Text>Registrar</Text>
       </Pressable>
     </View>
   )

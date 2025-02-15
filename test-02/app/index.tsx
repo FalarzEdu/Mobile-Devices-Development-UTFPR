@@ -31,7 +31,7 @@ export default function Login() {
       alignItems: "center",
       position: "relative",
       gap: DEFAULT_GAP * 3,
-      top: 160,
+      top: 0,
     },
     buttonWrapper: {
       marginTop: DEFAULT_MARGIN * 3,

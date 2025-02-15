@@ -1,0 +1,22 @@
+appId: com.anonymous.Prova01
+---
+# - launchApp
+
+- tapOn: "Cadastrar-se"
+
+- tapOn: "Username"
+- inputText: "TestUser"
+- pressKey: back
+
+- tapOn: "Email"
+- inputText: "test@example.com"
+- pressKey: back
+
+- tapOn: "Password"
+- inputText: "123456"
+- pressKey: back
+
+- tapOn: "Registrar"
+
+- assertVisible: "Registro feito com sucesso!"
+
