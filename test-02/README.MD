@@ -45,14 +45,14 @@ Desta forma os testes unitários serão executados.
 
 ### E2E - celular físico
 
-Para executar os testes com um celular físio, é necessário que o modo de depuração via USB nas opções de desenvolvedor seja habilitado. Pesquise sobre o tema e habilite a opção de acordo com o seu celular.
+Para executar os testes com um celular físico, é necessário que o modo de depuração via USB nas opções de desenvolvedor esteja habilitado. Pesquise sobre o tema e habilite a opção de acordo com o seu celular.
 
 #### Execute:
 ```
 yarn start
 ```
 
-Assim que o expo carregue a aplicação, acesse-a por meio do QR Code.
+Assim que o expo carregar a aplicação, acesse-a por meio do QR Code.
 
 Com o celular devidamente configurado e conectado via USB, abra a aplicação, permaneça na tela de login e execute (na raiz do projeto):
 
