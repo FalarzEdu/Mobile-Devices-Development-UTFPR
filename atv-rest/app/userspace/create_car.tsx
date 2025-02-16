@@ -18,6 +18,7 @@ export default function CreateCar() {
       model,
       brand,
       hp: parseInt(hp),
+      availability: 'available'
     };
 
     // na outra pagina fizemos com Promise.then, aqui com async/await

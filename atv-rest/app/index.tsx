@@ -22,7 +22,7 @@ export default function Login() {
             const result = await api.post(
               "/api/collections/users/auth-with-password",
               {
-                identity: "fulano",
+                identity: "fulano@example.com",
                 password: "pdm123pdm",
               }
             );
