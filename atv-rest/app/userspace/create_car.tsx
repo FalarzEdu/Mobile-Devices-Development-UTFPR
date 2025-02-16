@@ -46,9 +46,10 @@ export default function CreateCar() {
     <View style={styles.container}>
       <Text style={styles.title}>Cars API CREATE</Text>
 
-      <TextInput value={brand} onChangeText={setBrand} placeholder="brand" />
-      <TextInput value={model} onChangeText={setModel} placeholder="model" />
+      <TextInput style={styles.rows} value={brand} onChangeText={setBrand} placeholder="brand" />
+      <TextInput style={styles.rows} value={model} onChangeText={setModel} placeholder="model" />
       <TextInput
+         style={styles.rows}
         value={hp}
         onChangeText={(text) => setHp(text.replace(/[^0-9]/g, ""))}
         placeholder="hp"
@@ -66,7 +67,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
   },
   title: { fontSize: 16, fontWeight: "bold", marginBottom: 16 },
+  rows: {
+    fontSize: 18,
+    paddingTop: 4,
+    paddingBottom: 4,
+    borderBottomColor: 'd9d9d9',
+    borderBottomWidth: 1,
+    borderStyle: 'dashed',
+    textAlign: 'center',
+    width: '80%',
+    marginBottom: 16
+    // margin: 'auto'
+  }
 });

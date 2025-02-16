@@ -84,17 +84,19 @@ export default function edit_car() {
   return (
     <View>
       <View>
-        <Text>Cars API Update</Text>
+        <Text style={styles.title}>Cars API Update</Text>
   
-        <TextInput value={brand} onChangeText={setBrand} placeholder="brand" />
-        <TextInput value={model} onChangeText={setModel} placeholder="model" />
+        <TextInput style={styles.rows} value={brand} onChangeText={setBrand} placeholder="brand" />
+        <TextInput style={styles.rows} value={model} onChangeText={setModel} placeholder="model" />
         <TextInput
+           style={styles.rows}
           value={hp}
           onChangeText={(text) => setHp(text.replace(/[^0-9]/g, ""))}
           placeholder="hp"
           keyboardType="number-pad"
         />
         <Picker
+        style={styles.picker}
           selectedValue={availability}
           onValueChange={(itemValue) => setAvailability(itemValue)}
         >
@@ -110,5 +112,28 @@ export default function edit_car() {
 }
 
 const styles = StyleSheet.create({
-
+  title: {
+    fontSize: 22,
+    margin: 'auto'
+  },
+  rows: {
+    fontSize: 18,
+    paddingTop: 4,
+    paddingBottom: 4,
+    borderBottomColor: 'd9d9d9',
+    borderBottomWidth: 1,
+    borderStyle: 'dashed',
+    textAlign: 'center'
+  },
+  picker: {
+    borderWidth: 1,
+    borderColor: 'grey',
+    borderStyle: 'solid',
+    backgroundColor: '#d9d9d9',
+    borderRadius: 5,
+    marginTop: 16,
+    marginBottom: 16,
+    width: '80%',
+    margin: 'auto'
+  }
 });

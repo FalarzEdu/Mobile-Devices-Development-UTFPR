@@ -39,8 +39,24 @@ export default function Home() {
       marginBottom: 16,
     },
     carRowHead: {
+      display: 'flex',
+      justifyContent: 'space-between',
       flexDirection: "row",
-      gap: 16,
+      width: '100%'
+    },
+    carRowHeadButtons: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexDirection: "row",
+      gap: 40
+    },
+    listRow: {
+      fontSize: 18,
+      paddingBottom: 4,
+      paddingTop: 4,
+      borderBottomColor: 'd9d9d9',
+      borderBottomWidth: 1,
+      borderStyle: 'dashed'
     },
     button: {
       padding: 8,
@@ -64,7 +80,20 @@ export default function Home() {
     filterButtons: {
       flexDirection: "row",
       gap: 8,
+      width: '100%',
+      justifyContent: 'space-between',
+      marginTop: 16,
+      borderBottomColor: 'd9d9d9',
+      borderBottomWidth: 1,
+      paddingBottom: 16
     },
+    picker: {
+      borderWidth: 1,
+      borderColor: 'grey',
+      borderStyle: 'solid',
+      backgroundColor: '#d9d9d9',
+      borderRadius: 5
+    }
   });
 
   useEffect(() => {
@@ -143,7 +172,7 @@ export default function Home() {
       <View style={styles.filters}>
         <View style={styles.selectFilter}>
           <Text>Select a car brand:</Text>
-          <Picker selectedValue={selectedBrand} onValueChange={changeBrandFilter}>
+          <Picker style={styles.picker} selectedValue={selectedBrand} onValueChange={changeBrandFilter}>
             {carBrands.map((brand, index) => (
               <Picker.Item key={index} label={brand} value={brand} />
             ))}
@@ -169,16 +198,20 @@ export default function Home() {
           <View style={styles.item}>
             <View style={styles.carRowHead}>
               <Text>{item.id}</Text>
-              <Link href={{ pathname: "userspace/edit_car", params: { id: item.id } }}>
-                <Ionicons name="pencil" size={16} color="blue" />
-              </Link>
-              <Pressable onPress={() => handleDelete(item.id)}>
-                <Ionicons name="trash" size={16} color="red" />
-              </Pressable>
+              <View style={styles.carRowHeadButtons}>
+                <Link href={{ pathname: "userspace/edit_car", params: { id: item.id } }}>
+                  <Ionicons name="pencil" size={20} color="blue" />
+                </Link>
+                <Pressable onPress={() => handleDelete(item.id)}>
+                  <Ionicons name="trash" size={20} color="red" />
+                </Pressable>
+              </View>
             </View>
-            <Text>Brand: {item.brand}</Text>
-            <Text>Model: {item.model}</Text>
-            <Text>HP: {item.hp}</Text>
+
+            <Text style={styles.listRow}>Brand: {item.brand}</Text>
+            <Text style={styles.listRow}>Model: {item.model}</Text>
+            <Text style={styles.listRow}>HP: {item.hp}</Text>
+            <Text style={styles.listRow}>{item.availability}</Text>
           </View>
         )}
         keyExtractor={(car) => car.id}

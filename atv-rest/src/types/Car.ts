@@ -3,4 +3,5 @@ export type Car = {
   brand: string;
   model: string;
   hp: number;
+  availability: string
 };
